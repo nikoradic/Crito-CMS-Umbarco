@@ -1,0 +1,36 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticleDetailPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "_Layout.cshtml";
+	ViewData["PageTitle"] = @Model.Value("pageTitle");
+	ViewData["PageDescription"] = @Model.Value("pageDescription");
+	ViewData["PageKeywords"] = @Model.Value("pageKeywords");
+}
+
+
+<header>
+    <div class="background">
+        <img class="background-lines" src="~/images/backgrounds-effects/background-lines.svg" alt="">
+    </div>
+    @await Html.PartialAsync("_NavBar")
+   
+    
+</header>
+<main>
+</main>
+
+<div class="article-deatil-page">
+    <h1 class="article-heading">More News</h1>
+    <p class="article-info">Datum: 3 oktober 2023</p>
+    <p class="article-info">Namn: Maja Doe</p>
+    <img src="~/images/pictures/linkedin-sara.jpg" alt="En bild" class="article-image">
+    <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    
+    </p>
+</div>
+
+
+ 

@@ -1,0 +1,146 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticleListPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "_Layout.cshtml";
+    ViewData["PageTitle"] = @Model.Value("pageTitle");
+    ViewData["PageDescription"] = @Model.Value("pageDescription");
+    ViewData["PageKeywords"] = @Model.Value("pageKeywords");
+}
+
+
+<header>
+    <div class="background">
+        <img class="background-lines" src="~/images/backgrounds-effects/background-lines.svg" alt="">
+    </div>
+    @await Html.PartialAsync("_NavBar")
+
+
+</header>
+<main>
+
+
+</main>
+
+
+<h1 class="section-heading">Our Latest Articles</h1>
+<section class="section-articles container">
+    <div class="article-gallery">
+
+        @{
+            var selection = Umbraco.Content(Guid.Parse("aebe95fe-5df7-47e6-847b-0e292d6d7c62"))
+            .ChildrenOfType("articleDetailPage")
+            .Where(x => x.IsVisible());
+        }
+
+        @foreach (var item in selection)
+        {
+
+          
+            <article class="article-card">
+                <a href="@item.Url()">
+                <div class="button-links my-showcase-button-links ">
+                </div>
+                <img src="~/images/pictures/chatGPT.jpg"
+                 alt="computer screen with chatGPT interface" />
+
+                    <span class="article-button">More</span>
+                </a>
+                    <h3>@item.Name()</h3>
+                <p>article text bla bla bla</p>
+            </article>
+
+        }
+
+
+
+
+
+        @*  <article class="article-card">
+        <div class="button-links my-showcase-button-links ">
+        <a  href="@Model.Value("articleDetailPageUrl")">
+        </div>
+        <img
+        src="~/images/pictures/chatGPT.jpg"
+        alt="computer screen with chatGPT interface"
+        />
+        </a>
+        <span>category 1</span>
+        <h3>article 1</h3>
+        <p>article text bla bla bla</p>
+
+        </article>
+        <article class="article-card">
+        <img
+        src="~/images/pictures/chatGPT.jpg"
+        alt="comupter screen with chatGPT interface"
+        />
+        <span>category 2</span>
+        <h3>article 2</h3>
+        <p>article text bla bla bla</p>
+        </article>
+        <article class="article-card">
+        <img
+        src="~/images/pictures/chatGPT.jpg"
+        alt="comupter screen with chatGPT interface"
+        />
+        <span>category 3</span>
+        <h3>article 3</h3>
+        <p>article text bla bla bla</p>
+        </article>
+        <article class="article-card">
+        <img
+        src="~/images/pictures/chatGPT.jpg"
+        alt="comupter screen with chatGPT interface"
+        />
+        <span>category 1</span>
+        <h3>article 1</h3>
+        <p>article text bla bla bla</p>
+        </article>
+        <article class="article-card">
+        <img
+        src="~/images/pictures/chatGPT.jpg"
+        alt="comupter screen with chatGPT interface"
+        />
+        <span>category 2</span>
+        <h3>article 2</h3>
+        <p>article text bla bla bla</p>
+        </article>
+        <article class="article-card">
+        <img
+        src="~/images/pictures/chatGPT.jpg"
+        alt="comupter screen with chatGPT interface"
+        />
+        <span>category 3</span>
+        <h3>article 3</h3>
+        <p>article text bla bla bla</p>
+        </article>
+        <article class="article-card">
+        <img
+        src="~/images/pictures/chatGPT.jpg"
+        alt="comupter screen with chatGPT interface"
+        />
+        <span>category 1</span>
+        <h3>article 1</h3>
+        <p>article text bla bla bla</p>
+        </article>
+        <article class="article-card">
+        <img
+        src="~/images/pictures/chatGPT.jpg"
+        alt="comupter screen with chatGPT interface"
+        />
+        <span>category 2</span>
+        <h3>article 2</h3>
+        <p>article text bla bla bla</p>
+        </article>
+        <article class="article-card">
+        <img
+        src="~/images/pictures/chatGPT.jpg"
+        alt="comupter screen with chatGPT interface"
+        />
+        <span>category 3</span>
+        <h3>article 3</h3>
+        <p>article text bla bla bla</p>
+        </article>*/*@
+    </div>
+</section>

@@ -1,0 +1,57 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+
+@{ 
+
+    var site = Model.Root();
+    var selection = Model.Root().Children.Where(x => x.IsVisible(PublishedValueFallback)).ToArray();
+
+}
+
+
+
+<section class="nav-section my-nav-section"> 
+   <div class="container my-nav-contatiner">
+       <a href="@Model.Value("showcaseButtonUrl")"><img class ="logotype my-logotype" src="~/images/logos/logotype.svg" alt=""></a>
+    <div class="company-info my-company-info">
+      <span class="company-name my-company-name"></span>
+      <span class="company-contact my-company-contact">
+        <i class="fas fa-phone"></i> +123 456 789
+        <i class="fas fa-envelope"></i> info@example.com
+        <i class="fas fa-map-marker-alt"></i> 1234 Stockholm
+      </span>
+    </div>
+    <div class="social-media my-socialmedia">
+      <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </header>
+  <nav class="my-nav">
+    <a class="@(Model.Id == site.Id ? "active" : null)" href="@site.Url()">@site.Name</a>
+    @if (selection?.Length > 0)
+{
+   
+        @foreach (var item in selection)
+        {
+            <a class="@(item.IsAncestorOrSelf(Model) ? "active" : null)" href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+           
+        }
+    
+}
+    
+    
+  </nav>
+  <div class="login-btn my-login-btn my-theme-btn">
+    <a class="btn-theme" href="login.html">Login <i class="fas fa-arrow-up-right"></i></a>
+  </div>
+   </div>
+  </section>

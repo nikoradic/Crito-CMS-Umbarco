@@ -1,0 +1,153 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "_Layout.cshtml";
+    ViewData["PageTitle"] = @Model.Value("pageTitle");
+	ViewData["PageDescription"] = @Model.Value("pageDescription");
+	ViewData["PageKeywords"] = @Model.Value("pageKeywords");
+ }
+
+
+<header>
+    <div class="background">
+        <img class="background-lines" src="~/images/backgrounds-effects/background-lines.svg" alt="">
+    </div>
+    @await Html.PartialAsync("_NavBar")
+    @await Html.PartialAsync("_ShowcaseSection")
+</header>
+<main>
+   @await Html.PartialAsync("_BrandSection")
+   @await Html.PartialAsync("_ServiceFeaturesSection")
+ 
+</main>
+
+
+
+<section class="my-section">
+    <div class="container">
+        <div class="column-left">
+            <img src="~/images/pictures/daria.jpg" alt="Bildbeskrivning">
+        </div>
+        <div class="column-right">
+            <p>About Company</p>
+            <h2>We Are Business Consulting & Credit Repair Experts</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+            <a href="service.html" class="btn-learn-more">Learn More</a>
+        </div>
+    </div>
+</section>
+   @await Html.PartialAsync("_OurServicesSection")
+   
+   <section class="custom-section">
+    <div class="custom-container">
+        <div class="custom-column custom-column-left">
+             <p>Why Choose us</p>
+            <h2>Why We Are The Best Business Consulting Agency</h2>
+            <h4><i class="far fa-thumbs-up"></i></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h4><i class="far fa-star"></i></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h4><i class="far fa-desktop"></i></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="custom-column custom-column-right">
+            <img src="~/images/pictures/amy.jpg" alt="Bildbeskrivning">
+        </div>
+    </div>
+</section>
+
+
+<section class="custom-column-section">
+    <p class="custom-gobal-p">Project & Case Studies</p>
+    <h2 class="custom-gobal-h2">Let's Looks Our Global Projects</h2>
+    <div class="custom-gobal-container">
+        <div class="custom-gobal-row">
+            <div class="custom-gobal-column">
+                <img src="~/images/pictures/bussniesmagazin.jpg" alt="Bild 1">
+                <p>Grow your business</p>
+                <a href="service.html" class="custom-btn-read-more">Read More <i class="fa-solid fa-arrow-up-right"></i></a>
+            </div>
+            <div class="custom-gobal-column">
+                <img src="~/images/pictures/desk.jpg" alt="Bild 2">
+                <p>Why your client needs a responsive website</p>
+                <a href="service.html" class="custom-btn-read-more">Read More <i class="fa-solid fa-arrow-up-right"></i></a>
+            </div>
+        </div>
+        <div class="custom-gobal-row">
+            <div class="custom-gobal-column">
+                <img src="~/images/pictures/pennablock.jpg" alt="Bild 3">
+                <p>Educate your employees to get better results</p>
+                <a href="service.html" class="custom-btn-read-more">Read More <i class="fa-solid fa-arrow-up-right"></i></a>
+            </div>
+            <div class="custom-gobal-column">
+                <img src="~/images/pictures/carlosdata.jpg" alt="Bild 4">
+                <p>Business Insights is a important piece of your business</p>
+                <a href="service.html" class="custom-btn-read-more">Read More <i class="fa-solid fa-arrow-up-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <section class="team-section">
+            <h1 class="section-heading-team">Vårt Team</h1>
+        <div class="container-team">
+            <div class="team-member">
+                <img src="~/images/pictures/christina-member.jpg" alt="Person 1">
+                <div class="name">John Doe</div>
+                <div class="description">Lorem ipsum dolor sit amet.</div>
+            </div>
+            <div class="team-member">
+                <img src="~/images/pictures/hassan-member.jpg" alt="Person 2">
+                <div class="name">Jane Smith</div>
+                <div class="description">Consectetur adipiscing elit.</div>
+            </div>
+            <div class="team-member">
+                <img src="~/images/pictures/serena-member.jpg" alt="Person 3">
+                <div class="name">Mike Johnson</div>
+                <div class="description">Sed do eiusmod tempor incididunt.</div>
+            </div>
+            <div class="team-member">
+                <img src="~/images/pictures/jocke-member.jpg" alt="Person 3">
+                <div class="name">Mike Johnson</div>
+                <div class="description">Sed do eiusmod tempor incididunt.</div>
+            </div>
+          
+        </div>
+        <div class="team-bakground">
+<h1 class="team-details-heading">What Our Client Says</h1>
+<div class="team-details">
+  <div class="team-detail">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    <div class="rating">
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+    </div>
+  </div>
+  <div class="team-detail">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    <div class="rating">
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+    </div>
+  </div>
+  <div class="team-detail">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    <div class="rating">
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+    </div>
+  </div>
+</div>
+
+<button class="black-button">Click Here</button>
+</div>
+
+       
+    </section>
